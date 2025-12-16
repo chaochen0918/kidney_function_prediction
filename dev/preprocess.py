@@ -5,7 +5,7 @@ import os
 # read data
 # --------------------------------------------------------------------------
 project_folder = os.path.dirname(os.path.abspath(__file__))
-data_path = os.path.join(project_folder, '..', 'data', 'kidney_dataset.csv')
+data_path = os.path.join(project_folder, '..', 'data', 'kidney_dataset_open.csv')
 df = pd.read_csv(data_path)
 
 # --------------------------------------------------------------------------
@@ -17,4 +17,4 @@ df['Medication'] = df['Medication'].fillna('Null')
 # output csv
 # --------------------------------------------------------------------------
 saved_path = os.path.join(project_folder, '..', 'data', 'kidney_data_processed.csv')
-df.to_csv(saved_path)
+df.to_csv(saved_path, index=False)
